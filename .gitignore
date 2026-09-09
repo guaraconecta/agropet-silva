@@ -1,6 +1,7 @@
 # Logs
 *.log
 
-# OS generated files
+# OS & Editor generated files
 .DS_Store
 Thumbs.db
+.~lock.*

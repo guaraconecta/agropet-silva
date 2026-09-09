@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animal Pets — Pet Shop, Banho &amp; Tosa em Joinville, SC</title>
+<meta name="description" content="Animal Pets na R. Boehmerwald, 498 em Joinville-SC. Banho e tosa carinhoso, rações premium e super premium, medicamentos e táxi pet no Paranaguamirim.">
+<meta name="keywords" content="Animal Pets, Petshop Joinville, Paranaguamirim, Banho e Tosa Joinville, Ração Pet Joinville, Táxi Pet">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Nunito:wght@400;500;600;700;800;900&family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS CDN & Config -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        cremeQuente: '#FBF6EE',
+        marromPet: '#3D2B1F',
+        marromClaro: '#6B4E3D',
+        terracota: '#C66B3D',
+        terracotaHover: '#D67748',
+        laranjaVibrante: '#F4823C',
+        laranjaHover: '#FF8F4D',
+        verdePet: '#5C8A3A',
+        verdeHover: '#6B9E45',
+        mostarda: '#E8B84B',
+        areia: '#E8DCC8',
+        areiaEscura: '#D4C4A8',
+        cinzaPet: '#9B8B7A',
+        pageBg: '#EDE5D8',
+        darkBg: '#120D0A',
+        darkCard: '#261D17',
+        darkSurface: '#33261F',
+      },
+      fontFamily: {
+        display: ['Fraunces', 'serif'],
+        body: ['Nunito', 'sans-serif'],
+        detalhe: ['Caveat', 'cursive'],
+      },
+      borderRadius: {
+        'dobra': '2rem',
+        'card': '1.5rem',
+        'item': '1rem',
+        'pill': '9999px',
+      },
+      transitionTimingFunction: {
+        'bounce-custom': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'smooth-out': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'spring': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+      }
+    }
+  }
+}
+</script>
+
+<style>
+  :root {
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+  }
+
+  body { 
+    font-family: 'Nunito', sans-serif; 
+    background-color: #EDE5D8; 
+    color: #3D2B1F; 
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  .dark body {
+    background-color: #120D0A;
+    color: #FBF6EE;
+  }
+
+  /* Paw Print Pattern */
+  .paw-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23C66B3D' fill-opacity='0.04'%3E%3Cellipse cx='30' cy='35' rx='8' ry='6'/%3E%3Cellipse cx='18' cy='25' rx='4' ry='5'/%3E%3Cellipse cx='42' cy='25' rx='4' ry='5'/%3E%3Cellipse cx='12' cy='38' rx='3' ry='4'/%3E%3Cellipse cx='48' cy='38' rx='3' ry='4'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .dark .paw-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23F4823C' fill-opacity='0.06'%3E%3Cellipse cx='30' cy='35' rx='8' ry='6'/%3E%3Cellipse cx='18' cy='25' rx='4' ry='5'/%3E%3Cellipse cx='42' cy='25' rx='4' ry='5'/%3E%3Cellipse cx='12' cy='38' rx='3' ry='4'/%3E%3Cellipse cx='48' cy='38' rx='3' ry='4'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Separator */
+  .separator-terracota {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #C66B3D, transparent);
+  }
+
+  /* Scroll Reveal System */
+  .scroll-reveal { 
+    opacity: 0; 
+    transform: translateY(24px) scale(0.98); 
+    transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth); 
+    will-change: opacity, transform;
+  }
+  .scroll-reveal.visible { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+
+  .scroll-reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+  }
+  .scroll-reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .scroll-reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.7s var(--ease-smooth), transform 0.7s var(--ease-smooth);
+  }
+  .scroll-reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Micro Interactions & Hover Dynamics */
+  .btn-cta { 
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease, background-color 0.2s ease; 
+  }
+  .btn-cta::after {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 0; height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease-out, height 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .btn-cta:active::after {
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+    transition: 0s;
+  }
+  .btn-cta:hover { 
+    transform: translateY(-3px) scale(1.02); 
+    box-shadow: 0 12px 28px rgba(244,130,60,0.35); 
+  }
+  .btn-cta:active {
+    transform: translateY(-1px) scale(0.98);
+  }
+
+  .btn-primary { 
+    transition: transform 0.3s var(--ease-spring), box-shadow 0.3s ease, background-color 0.2s ease; 
+  }
+  .btn-primary:hover { 
+    transform: translateY(-3px) scale(1.02); 
+    box-shadow: 0 12px 28px rgba(198,107,61,0.3); 
+  }
+
+  /* Service Card Lift */
+  .service-card { 
+    transition: transform 0.4s var(--ease-spring), box-shadow 0.4s ease, border-color 0.3s ease; 
+  }
+  .service-card:hover { 
+    transform: translateY(-8px) scale(1.01); 
+    box-shadow: 0 20px 45px rgba(61,43,31,0.12); 
+    border-color: rgba(198,107,61,0.5);
+  }
+
+  /* Product Card 3D Lift */
+  .product-card { 
+    transition: transform 0.4s var(--ease-spring), box-shadow 0.4s ease; 
+    position: relative;
+    overflow: hidden;
+  }
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 60%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transform: skewX(-25deg);
+    transition: left 0.7s ease;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .product-card:hover::before {
+    left: 150%;
+  }
+  .product-card:hover { 
+    transform: translateY(-8px) rotate(0.5deg); 
+    box-shadow: 0 20px 40px rgba(61,43,31,0.14); 
+  }
+
+  /* Underline Warm Animation */
+  .underline-warm { position: relative; }
+  .underline-warm::after {
+    content: ''; position: absolute; bottom: -2px; left: 0;
+    width: 0; height: 2.5px; background: #C66B3D; border-radius: 2px; 
+    transition: width 0.35s var(--ease-spring);
+  }
+  .underline-warm:hover::after { width: 100%; }
+
+  /* Animated Keyframes */
+  .badge-bounce { animation: floatBounce 3s ease-in-out infinite; }
+  @keyframes floatBounce { 
+    0%, 100% { transform: translateY(0) scale(1); } 
+    50% { transform: translateY(-6px) scale(1.05); } 
+  }
+
+  .pulse-glow { animation: pulseGlow 2.5s ease-in-out infinite; }
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(198,107,61,0.4); }
+    50% { box-shadow: 0 0 0 12px rgba(198,107,61,0); }
+  }
+
+  .paw-wiggle { animation: pawWiggle 4s ease-in-out infinite; transform-origin: bottom center; }
+  @keyframes pawWiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-8deg); }
+    75% { transform: rotate(8deg); }
+  }
+
+  /* Tab Indicator Sliding */
+  .tab-pill {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s var(--ease-spring);
+  }
+  .tab-pill.active {
+    background-color: #C66B3D;
+    color: #FFFFFF;
+    box-shadow: 0 4px 14px rgba(198,107,61,0.3);
+  }
+
+  /* Native Dialog Modern `@starting-style` and discrete transition */
+  dialog {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+    transition: opacity 0.35s var(--ease-smooth), transform 0.35s var(--ease-spring), display 0.35s allow-discrete, overlay 0.35s allow-discrete;
+    border: none;
+  }
+  dialog[open] {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  @starting-style {
+    dialog[open] {
+      opacity: 0;
+      transform: scale(0.92) translateY(12px);
+    }
+  }
+  dialog::backdrop {
+    background-color: rgba(61, 43, 31, 0);
+    backdrop-filter: blur(0px);
+    transition: background-color 0.35s ease, backdrop-filter 0.35s ease, display 0.35s allow-discrete, overlay 0.35s allow-discrete;
+  }
+  dialog[open]::backdrop {
+    background-color: rgba(61, 43, 31, 0.6);
+    backdrop-filter: blur(6px);
+  }
+  @starting-style {
+    dialog[open]::backdrop {
+      background-color: rgba(61, 43, 31, 0);
+      backdrop-filter: blur(0px);
+    }
+  }
+
+  /* Glassmorphism Surface */
+  .glass-card {
+    background: rgba(251, 246, 238, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+  .dark .glass-card {
+    background: rgba(38, 29, 23, 0.88);
+    border: 1px solid rgba(198, 107, 61, 0.2);
+  }
+
+  /* Interactive Toast Notification */
+  #toast {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.4s var(--ease-spring), opacity 0.4s ease;
+  }
+  #toast.show {
+    transform: translateY(0);
+    opacity: 1;
+  }
+</style>
+</head>
+<body class="bg-pageBg dark:bg-darkBg text-marromPet dark:text-cremeQuente font-body antialiased transition-colors duration-400">
+
+<!-- ============================ -->
+<!-- HEADER / BARRA DE NAVEGAÇÃO  -->
+<!-- ============================ -->
+<header class="sticky top-0 z-50 bg-cremeQuente/90 dark:bg-darkCard/90 backdrop-blur-md border-b border-areiaEscura/30 dark:border-terracota/20 px-3 sm:px-4 md:px-[2cm] py-3 transition-colors duration-300">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto flex items-center justify-between gap-2 sm:gap-4">
+    <!-- Logo & Nome -->
+    <a href="#hero" class="flex items-center gap-2.5 group">
+      <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-terracota flex items-center justify-center text-white font-bold font-display text-base shadow-sm group-hover:scale-105 transition-transform">🐾</div>
+      <div>
+        <span class="font-display font-bold text-base sm:text-xl leading-none block text-marromPet dark:text-cremeQuente">Animal Pets</span>
+        <span class="font-body text-[9px] sm:text-[11px] text-terracota uppercase tracking-wider font-extrabold block mt-0.5">Pet Shop &amp; Banho e Tosa</span>
+      </div>
+    </a>
+    
+    <div class="flex items-center gap-2 sm:gap-4">
+      <!-- Quick Nav Links -->
+      <nav class="hidden lg:flex items-center gap-5 text-xs uppercase tracking-wider font-bold text-cinzaPet dark:text-areiaEscura">
+        <a href="#hero" class="hover:text-terracota transition-colors underline-warm">Início</a>
+        <a href="#servicos" class="hover:text-terracota transition-colors underline-warm">Serviços</a>
+        <a href="#produtos" class="hover:text-terracota transition-colors underline-warm">Produtos</a>
+        <a href="#avaliacoes" class="hover:text-terracota transition-colors underline-warm">Avaliações</a>
+        <a href="#localizacao" class="hover:text-terracota transition-colors underline-warm">Horários &amp; Contato</a>
+        <a href="#faq" class="hover:text-terracota transition-colors underline-warm">Dúvidas</a>
+      </nav>
+
+      <!-- Theme Switcher -->
+      <button id="themeToggle" onclick="toggleTheme()" class="flex items-center gap-1.5 bg-areia/60 dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-1.5 rounded-full text-xs font-bold transition-all hover:scale-105 active:scale-95 flex-shrink-0" title="Alternar tema">
+        <span id="themeIcon">🌙</span>
+        <span id="themeLabel" class="hidden sm:inline">Modo escuro</span>
+      </button>
+
+      <!-- WhatsApp CTA -->
+      <a href="https://wa.me/5547984228382?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20e%20produtos%20da%20Animal%20Pets." target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-1.5 bg-verdePet text-white px-3.5 py-1.5 rounded-full font-body font-bold text-xs uppercase tracking-wider hover:bg-verdeHover transition-colors flex-shrink-0">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+
+      <!-- Modal Trigger -->
+      <button onclick="openBookingModal()" class="btn-cta bg-laranjaVibrante text-white px-3.5 sm:px-4 py-1.5 rounded-full font-body font-bold text-xs uppercase tracking-wider hover:bg-laranjaHover flex items-center gap-1.5 flex-shrink-0">
+        <span>Agendar banho</span>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============================ -->
+<!-- 1. HERO SECTION              -->
+<!-- ============================ -->
+<section id="hero" class="py-4 md:py-6 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-2xl md:rounded-dobra overflow-hidden shadow-sm border border-areiaEscura/30 dark:border-terracota/20 paw-pattern relative transition-colors duration-400">
+    <div class="relative z-10 min-h-0 md:min-h-[82vh] flex items-center px-4 sm:px-8 md:px-12 py-8 md:py-14">
+      <div class="w-full grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+        
+        <!-- Hero Text Content -->
+        <div class="md:col-span-7 scroll-reveal-left">
+          <div class="flex flex-wrap items-center gap-2 sm:gap-2.5 mb-4 sm:mb-6">
+            <span class="font-body text-terracota text-[11px] sm:text-xs uppercase tracking-[0.2em] font-extrabold bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20 flex items-center gap-1.5">
+              <span>📍 Paranaguamirim · Joinville - SC</span>
+            </span>
+            <span class="font-body text-verdePet text-[11px] sm:text-xs uppercase tracking-[0.15em] font-extrabold bg-verdePet/10 px-3 py-1 rounded-full border border-verdePet/20 flex items-center gap-1">
+              <span>⭐ 4,8 de 5 no Google</span>
+            </span>
+          </div>
+
+          <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl xl:text-7xl leading-[1.08] mb-4 sm:mb-6 font-bold tracking-tight text-marromPet dark:text-cremeQuente">
+            Carinho e cuidado que o seu pet <span class="text-terracota italic font-normal">merece de verdade</span>
+          </h1>
+
+          <p class="font-body text-base sm:text-xl text-cinzaPet dark:text-areiaEscura mb-6 sm:mb-8 max-w-xl leading-relaxed">
+            Banho e tosa profissional, rações de alta qualidade, artigos de higiene e atendimento dedicado na R. Boehmerwald, 498 em Joinville.
+          </p>
+
+          <div class="flex flex-wrap gap-3 sm:gap-4 items-center">
+            <button onclick="openBookingModal()" class="btn-cta bg-laranjaVibrante text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-body font-bold uppercase tracking-wide text-xs sm:text-sm hover:bg-laranjaHover flex items-center gap-2">
+              <span>Agendar banho e tosa</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </button>
+
+            <a href="https://wa.me/5547984228382?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Animal%20Pets." target="_blank" rel="noopener noreferrer" class="btn-primary bg-verdePet text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-body font-bold uppercase tracking-wide text-xs sm:text-sm hover:bg-verdeHover flex items-center gap-2">
+              <span>Pedir no WhatsApp</span>
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
+
+          <!-- Trust Badges List -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-8 pt-6 border-t border-areiaEscura/40 dark:border-terracota/20">
+            <div class="flex items-center gap-2">
+              <span class="text-terracota text-lg">🚚</span>
+              <span class="font-body text-xs font-bold">Tele-entrega rápida</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-terracota text-lg">♿</span>
+              <span class="font-body text-xs font-bold">Entrada acessível</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-terracota text-lg">💳</span>
+              <span class="font-body text-xs font-bold">Pix &amp; Cartões</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image Card -->
+        <div class="md:col-span-5 scroll-reveal-right">
+          <div class="relative">
+            <div class="rounded-card overflow-hidden border-2 border-areiaEscura/40 dark:border-terracota/30 shadow-2xl glass-card relative group transition-transform duration-500 hover:scale-[1.01]">
+              <img src="animalpets_hero.png" alt="Loja Animal Pets em Joinville" class="w-full h-[360px] sm:h-[450px] object-cover transition-transform duration-700 group-hover:scale-105">
+              <div class="absolute inset-0 bg-gradient-to-t from-marromPet/80 via-transparent to-transparent"></div>
+              
+              <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-white/90 dark:bg-darkCard/90 backdrop-blur-md border border-areiaEscura/30 dark:border-terracota/30 shadow-lg">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="font-display font-bold text-base text-marromPet dark:text-cremeQuente">Atendimento atencioso e personalizado</p>
+                    <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura">R. Boehmerwald, 498 · Joinville/SC</p>
+                  </div>
+                  <span class="text-2xl paw-wiggle">🐾</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge -->
+            <div class="absolute -top-4 -right-4 bg-white dark:bg-darkCard rounded-card p-3 shadow-xl border border-areiaEscura/30 dark:border-terracota/30 badge-bounce hidden sm:block">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-verdePet/20 flex items-center justify-center text-verdePet font-bold text-sm">
+                  ⭐
+                </div>
+                <div>
+                  <p class="font-body text-xs font-bold">Nota 4,8 de 5</p>
+                  <p class="font-body text-[10px] text-cinzaPet">Avaliação Google Maps</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+<!-- 2. SERVIÇOS E DIFERENCIAIS   -->
+<!-- ============================ -->
+<section id="servicos" class="py-6 md:py-10 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-2xl md:rounded-dobra p-5 sm:p-8 md:p-12 py-10 md:py-16 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    
+    <div class="flex items-center gap-2.5 sm:gap-3 mb-4 scroll-reveal">
+      <span class="font-display text-xs sm:text-sm font-bold text-terracota bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20 uppercase tracking-wider">Cuidado completo</span>
+      <div class="h-px flex-1 bg-areiaEscura/40 dark:bg-terracota/20"></div>
+      <h2 class="font-display text-2xl sm:text-4xl font-bold">Nossos serviços para o seu pet</h2>
+    </div>
+
+    <p class="font-body text-sm sm:text-base text-cinzaPet dark:text-areiaEscura mb-8 sm:mb-12 max-w-3xl scroll-reveal">
+      Trabalhamos com carinho, técnica e dedicação para proporcionar momentos agradáveis ao seu animal de estimação no Paranaguamirim.
+    </p>
+
+    <!-- Services Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Card 1: Banho e Tosa -->
+      <div class="service-card bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal group">
+        <div class="w-12 h-12 rounded-2xl bg-terracota/15 text-terracota flex items-center justify-center text-2xl mb-4 font-bold">
+          ✂️
+        </div>
+        <h3 class="font-display text-xl font-bold mb-2 text-marromPet dark:text-cremeQuente">Banho e tosa carinhoso</h3>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+          Higienização profunda com shampoos suaves, tosa higiênica, limpeza de ouvidos e corte de unhas feito com paciência e cuidado.
+        </p>
+        <button onclick="openBookingModal()" class="font-body text-xs font-bold text-terracota uppercase tracking-wider group-hover:text-laranjaVibrante transition-colors flex items-center gap-1">
+          <span>Agendar horário</span>
+          <span>→</span>
+        </button>
+      </div>
+
+      <!-- Card 2: Rações Selecionadas -->
+      <div class="service-card bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal group">
+        <div class="w-12 h-12 rounded-2xl bg-laranjaVibrante/15 text-laranjaVibrante flex items-center justify-center text-2xl mb-4 font-bold">
+          🦴
+        </div>
+        <h3 class="font-display text-xl font-bold mb-2 text-marromPet dark:text-cremeQuente">Rações Premium &amp; Super Premium</h3>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+          As melhores marcas de rações para cães e gatos de todos os portes. Grande variedade de pacotes e preços competitivos.
+        </p>
+        <a href="#produtos" class="font-body text-xs font-bold text-laranjaVibrante uppercase tracking-wider group-hover:text-laranjaHover transition-colors flex items-center gap-1">
+          <span>Ver produtos em loja</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- Card 3: Farmácia & Higiene Pet -->
+      <div class="service-card bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal group">
+        <div class="w-12 h-12 rounded-2xl bg-verdePet/15 text-verdePet flex items-center justify-center text-2xl mb-4 font-bold">
+          💊
+        </div>
+        <h3 class="font-display text-xl font-bold mb-2 text-marromPet dark:text-cremeQuente">Farmácia &amp; Produtos de higiene</h3>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+          Antipulgas, vermífugos, coleiras, tapetes higiênicos, shampoos e petiscos selecionados para a rotina diária do seu pet.
+        </p>
+        <a href="https://wa.me/5547984228382?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20medicamentos%20e%20antipulgas." target="_blank" rel="noopener noreferrer" class="font-body text-xs font-bold text-verdePet uppercase tracking-wider group-hover:text-verdeHover transition-colors flex items-center gap-1">
+          <span>Consultar no WhatsApp</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- Card 4: Táxi Pet & Tele-entrega -->
+      <div class="service-card bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal group">
+        <div class="w-12 h-12 rounded-2xl bg-terracota/15 text-terracota flex items-center justify-center text-2xl mb-4 font-bold">
+          🚕
+        </div>
+        <h3 class="font-display text-xl font-bold mb-2 text-marromPet dark:text-cremeQuente">Táxi Pet &amp; Tele-entrega</h3>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+          Praticidade para a sua rotina: buscamos seu animal para o banho e entregamos rações e produtos diretamente no seu endereço.
+        </p>
+        <a href="https://wa.me/5547984228382?text=Ol%C3%A1!%20Quero%20solicitar%20o%20T%C3%A1xi%20Pet%20ou%20Tele-entrega." target="_blank" rel="noopener noreferrer" class="font-body text-xs font-bold text-terracota uppercase tracking-wider group-hover:text-laranjaVibrante transition-colors flex items-center gap-1">
+          <span>Pedir busca/entrega</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- Card 5: Acessibilidade & Estacionamento -->
+      <div class="service-card bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal group">
+        <div class="w-12 h-12 rounded-2xl bg-verdePet/15 text-verdePet flex items-center justify-center text-2xl mb-4 font-bold">
+          ♿
+        </div>
+        <h3 class="font-display text-xl font-bold mb-2 text-marromPet dark:text-cremeQuente">Estrutura acessível</h3>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+          Loja plana, estacionamento na porta e fácil acesso para garantir total comodidade a todos os tutores e clientes.
+        </p>
+        <a href="#localizacao" class="font-body text-xs font-bold text-verdePet uppercase tracking-wider group-hover:text-verdeHover transition-colors flex items-center gap-1">
+          <span>Ver endereço</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- Card 6: Atendimento Próximo -->
+      <div class="service-card bg-cremeQuente dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal group">
+        <div class="w-12 h-12 rounded-2xl bg-mostarda/20 text-marromPet dark:text-mostarda flex items-center justify-center text-2xl mb-4 font-bold">
+          ❤️
+        </div>
+        <h3 class="font-display text-xl font-bold mb-2 text-marromPet dark:text-cremeQuente">Atendimento de confiança</h3>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-4 leading-relaxed">
+          Equipe simpática e atenciosa disposta a orientar na escolha da ração e no melhor cuidado para o seu animal.
+        </p>
+        <a href="https://wa.me/5547984228382" target="_blank" rel="noopener noreferrer" class="font-body text-xs font-bold text-terracota uppercase tracking-wider group-hover:text-laranjaVibrante transition-colors flex items-center gap-1">
+          <span>Falar com a equipe</span>
+          <span>→</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+<!-- 3. VITRINE DE PRODUTOS       -->
+<!-- ============================ -->
+<section id="produtos" class="py-6 md:py-10 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-2xl md:rounded-dobra p-5 sm:p-8 md:p-12 py-10 md:py-16 border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 scroll-reveal">
+      <div>
+        <span class="font-display text-xs sm:text-sm font-bold text-terracota bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20 uppercase tracking-wider">Produtos em destaque</span>
+        <h2 class="font-display text-2xl sm:text-4xl font-bold mt-2">Marcas e variedades na Animal Pets</h2>
+      </div>
+
+      <!-- Catalog Tabs -->
+      <div class="flex flex-wrap gap-2">
+        <button onclick="filterCatalog('todos', this)" class="tab-pill active px-4 py-2 rounded-full font-body text-xs font-bold">Todos</button>
+        <button onclick="filterCatalog('caes', this)" class="tab-pill px-4 py-2 rounded-full font-body text-xs font-bold bg-white/70 dark:bg-darkSurface">Cães</button>
+        <button onclick="filterCatalog('gatos', this)" class="tab-pill px-4 py-2 rounded-full font-body text-xs font-bold bg-white/70 dark:bg-darkSurface">Gatos</button>
+        <button onclick="filterCatalog('higiene', this)" class="tab-pill px-4 py-2 rounded-full font-body text-xs font-bold bg-white/70 dark:bg-darkSurface">Higiene &amp; Saúde</button>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <!-- Product 1 -->
+      <div class="product-card catalog-item caes bg-white dark:bg-darkSurface p-5 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+        <div class="flex items-center justify-between mb-3">
+          <span class="bg-laranjaVibrante/10 text-laranjaVibrante px-2.5 py-0.5 rounded-full font-body text-[10px] uppercase tracking-wider font-extrabold">Super Premium</span>
+          <span class="text-xs font-bold text-cinzaPet">Sacaria 10kg - 15kg</span>
+        </div>
+        <h3 class="font-display font-bold text-lg text-marromPet dark:text-cremeQuente mb-1">Ração Monello &amp; Linha Premium Cães</h3>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mb-4">Nutrição completa com ingredientes de alta absorção para o fortalecimento do seu pet.</p>
+        <div class="flex items-center justify-between pt-3 border-t border-areia/60 dark:border-terracota/20">
+          <span class="font-display font-bold text-terracota text-lg">Consulte valor</span>
+          <a href="https://wa.me/5547984228382?text=Ol%C3%A1!%20Gostaria%20de%20saber%20o%20pre%C3%A7o%20da%20Ra%C3%A7%C3%A3o%20para%20C%C3%A3es." target="_blank" rel="noopener noreferrer" class="btn-cta bg-laranjaVibrante text-white px-3.5 py-1.5 rounded-xl font-bold text-xs">Pedir no WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card catalog-item gatos bg-white dark:bg-darkSurface p-5 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+        <div class="flex items-center justify-between mb-3">
+          <span class="bg-terracota/10 text-terracota px-2.5 py-0.5 rounded-full font-body text-[10px] uppercase tracking-wider font-extrabold">Feline Special</span>
+          <span class="text-xs font-bold text-cinzaPet">Emb. 1kg - 10kg</span>
+        </div>
+        <h3 class="font-display font-bold text-lg text-marromPet dark:text-cremeQuente mb-1">Ração para gatos castrados</h3>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mb-4">Sabor irresistível com fórmula para saúde urinária e peso ideal.</p>
+        <div class="flex items-center justify-between pt-3 border-t border-areia/60 dark:border-terracota/20">
+          <span class="font-display font-bold text-terracota text-lg">Consulte valor</span>
+          <a href="https://wa.me/5547984228382?text=Ol%C3%A1!%20Quero%20saber%20sobre%20ra%C3%A7%C3%B5es%20para%20gatos." target="_blank" rel="noopener noreferrer" class="btn-cta bg-laranjaVibrante text-white px-3.5 py-1.5 rounded-xl font-bold text-xs">Pedir no WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card catalog-item higiene bg-white dark:bg-darkSurface p-5 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+        <div class="flex items-center justify-between mb-3">
+          <span class="bg-verdePet/10 text-verdePet px-2.5 py-0.5 rounded-full font-body text-[10px] uppercase tracking-wider font-extrabold">Saúde Pet</span>
+          <span class="text-xs font-bold text-cinzaPet">Uso veterinário</span>
+        </div>
+        <h3 class="font-display font-bold text-lg text-marromPet dark:text-cremeQuente mb-1">Antipulgas &amp; Vermífugos</h3>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mb-4">Proteção garantida contra parasitas internos e externos.</p>
+        <div class="flex items-center justify-between pt-3 border-t border-areia/60 dark:border-terracota/20">
+          <span class="font-display font-bold text-verdePet text-lg">Pronta entrega</span>
+          <a href="https://wa.me/5547984228382?text=Ol%C3%A1!%20Preciso%20de%20Antipulgas%20ou%20Verm%C3%ADfugo." target="_blank" rel="noopener noreferrer" class="btn-cta bg-verdePet text-white px-3.5 py-1.5 rounded-xl font-bold text-xs">Pedir no WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="product-card catalog-item higiene bg-white dark:bg-darkSurface p-5 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+        <div class="flex items-center justify-between mb-3">
+          <span class="bg-mostarda/20 text-marromPet dark:text-mostarda px-2.5 py-0.5 rounded-full font-body text-[10px] uppercase tracking-wider font-extrabold">Banho &amp; Cuidados</span>
+          <span class="text-xs font-bold text-cinzaPet">Shampoo &amp; Perfume</span>
+        </div>
+        <h3 class="font-display font-bold text-lg text-marromPet dark:text-cremeQuente mb-1">Linha de cosméticos pet</h3>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mb-4">Shampoos neutros, condicionadores e colônias com aromas suaves.</p>
+        <div class="flex items-center justify-between pt-3 border-t border-areia/60 dark:border-terracota/20">
+          <span class="font-display font-bold text-terracota text-lg">Diversas opções</span>
+          <a href="https://wa.me/5547984228382?text=Ol%C3%A1!%20Quero%20saber%20sobre%20produtos%20de%20higiene." target="_blank" rel="noopener noreferrer" class="btn-cta bg-laranjaVibrante text-white px-3.5 py-1.5 rounded-xl font-bold text-xs">Pedir no WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="product-card catalog-item caes bg-white dark:bg-darkSurface p-5 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+        <div class="flex items-center justify-between mb-3">
+          <span class="bg-terracota/10 text-terracota px-2.5 py-0.5 rounded-full font-body text-[10px] uppercase tracking-wider font-extrabold">Acessórios</span>
+          <span class="text-xs font-bold text-cinzaPet">Guias &amp; Brinquedos</span>
+        </div>
+        <h3 class="font-display font-bold text-lg text-marromPet dark:text-cremeQuente mb-1">Petiscos, guias e coleiras</h3>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mb-4">Itens essenciais para passeios confortáveis e prêmios para o seu cão.</p>
+        <div class="flex items-center justify-between pt-3 border-t border-areia/60 dark:border-terracota/20">
+          <span class="font-display font-bold text-terracota text-lg">Consulte estoque</span>
+          <a href="https://wa.me/5547984228382?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20acess%C3%B3rios%20e%20petiscos." target="_blank" rel="noopener noreferrer" class="btn-cta bg-laranjaVibrante text-white px-3.5 py-1.5 rounded-xl font-bold text-xs">Pedir no WhatsApp</a>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="product-card catalog-item gatos bg-white dark:bg-darkSurface p-5 rounded-card border border-areiaEscura/30 dark:border-terracota/20 scroll-reveal">
+        <div class="flex items-center justify-between mb-3">
+          <span class="bg-verdePet/10 text-verdePet px-2.5 py-0.5 rounded-full font-body text-[10px] uppercase tracking-wider font-extrabold">Higiene Felina</span>
+          <span class="text-xs font-bold text-cinzaPet">Areias Sanitárias</span>
+        </div>
+        <h3 class="font-display font-bold text-lg text-marromPet dark:text-cremeQuente mb-1">Areia sanitária para gatos</h3>
+        <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura mb-4">Alto poder de absorção e neutralização de odores para o conforto do felino.</p>
+        <div class="flex items-center justify-between pt-3 border-t border-areia/60 dark:border-terracota/20">
+          <span class="font-display font-bold text-verdePet text-lg">Sacaria em estoque</span>
+          <a href="https://wa.me/5547984228382?text=Ol%C3%A1!%20Quero%20consultar%20areia%20sanit%C3%A1ria." target="_blank" rel="noopener noreferrer" class="btn-cta bg-verdePet text-white px-3.5 py-1.5 rounded-xl font-bold text-xs">Pedir no WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+<!-- 4. BANHO E TOSA EM AÇÃO      -->
+<!-- ============================ -->
+<section class="py-6 md:py-10 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-2xl md:rounded-dobra p-5 sm:p-8 md:p-12 py-10 md:py-16 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 paw-pattern">
+    <div class="grid md:grid-cols-12 gap-8 items-center">
+      
+      <div class="md:col-span-6 scroll-reveal-left">
+        <div class="rounded-card overflow-hidden border border-areiaEscura/30 dark:border-terracota/30 shadow-xl relative group">
+          <img src="animalpets_grooming.png" alt="Sessão de banho e tosa na Animal Pets em Joinville" class="w-full h-[320px] sm:h-[400px] object-cover transition-transform duration-700 group-hover:scale-105">
+          <div class="absolute top-4 left-4 bg-terracota text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow">
+            Atendimento carinhoso ✂️
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-6 scroll-reveal-right">
+        <span class="font-display text-xs sm:text-sm font-bold text-terracota bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20 uppercase tracking-wider">Banho &amp; Tosa no Paranaguamirim</span>
+        <h2 class="font-display text-3xl sm:text-4xl font-bold mt-3 mb-4 text-marromPet dark:text-cremeQuente">
+          Seu amiguinho limpo, cheiroso e <span class="text-terracota italic font-normal">sem estresse</span>
+        </h2>
+        <p class="font-body text-sm sm:text-base text-cinzaPet dark:text-areiaEscura mb-6 leading-relaxed">
+          Na Animal Pets tratamos cada animal com o carinho que ele merece. Nosso espaço é pensado para proporcionar uma experiência tranquila e agradável.
+        </p>
+
+        <ul class="space-y-3 mb-8 text-sm">
+          <li class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-verdePet/20 text-verdePet flex items-center justify-center text-xs font-bold">✓</span>
+            <span class="font-body font-semibold">Banhos com produtos suaves e água em temperatura ideal</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-verdePet/20 text-verdePet flex items-center justify-center text-xs font-bold">✓</span>
+            <span class="font-body font-semibold">Tosa higiênica e tosa da raça realizadas com precisão</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <span class="w-5 h-5 rounded-full bg-verdePet/20 text-verdePet flex items-center justify-center text-xs font-bold">✓</span>
+            <span class="font-body font-semibold">Serviço de busca e entrega (Táxi Pet) disponível</span>
+          </li>
+        </ul>
+
+        <div class="flex flex-wrap gap-4">
+          <button onclick="openBookingModal()" class="btn-cta bg-laranjaVibrante text-white px-7 py-3.5 rounded-xl font-bold uppercase text-xs tracking-wider shadow-md">
+            Agendar banho agora 🐾
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+<!-- 5. AVALIAÇÕES / PROVA SOCIAL -->
+<!-- ============================ -->
+<section id="avaliacoes" class="py-6 md:py-10 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-2xl md:rounded-dobra p-5 sm:p-8 md:p-12 py-10 md:py-16 border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    
+    <div class="text-center max-w-2xl mx-auto mb-10 scroll-reveal">
+      <div class="inline-flex items-center gap-1.5 bg-verdePet/10 text-verdePet px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-2 border border-verdePet/20">
+        <span>⭐ 4,8 de 5 no Google Maps</span>
+      </div>
+      <h2 class="font-display text-3xl sm:text-4xl font-bold">O que nossos clientes dizem</h2>
+      <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mt-2">
+        Aprovação máxima de tutores do bairro Paranaguamirim e região em Joinville.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Review 1 -->
+      <div class="bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 shadow-sm scroll-reveal flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-1 text-mostarda mb-3">
+            ★★★★★
+          </div>
+          <p class="font-body text-xs sm:text-sm italic text-marromPet dark:text-cremeQuente mb-4 leading-relaxed">
+            "Excelente atendimento! O banho na minha cachorrinha foi feito com muito carinho, ela voltou feliz da vida e bem cheirosa. Recomendo a todos na região."
+          </p>
+        </div>
+        <div class="pt-4 border-t border-areia/50 dark:border-terracota/20 flex items-center justify-between">
+          <div>
+            <p class="font-body font-bold text-xs">Luciana P.</p>
+            <p class="font-body text-[10px] text-cinzaPet">Cliente no Paranaguamirim</p>
+          </div>
+          <span class="text-xs text-cinzaPet font-bold">Google Maps</span>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 shadow-sm scroll-reveal flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-1 text-mostarda mb-3">
+            ★★★★★
+          </div>
+          <p class="font-body text-xs sm:text-sm italic text-marromPet dark:text-cremeQuente mb-4 leading-relaxed">
+            "Atendimento nota 10 pelo Glauber e equipe! Preço justo nas rações e sempre com produtos novinhos para os meus gatos."
+          </p>
+        </div>
+        <div class="pt-4 border-t border-areia/50 dark:border-terracota/20 flex items-center justify-between">
+          <div>
+            <p class="font-body font-bold text-xs">Robson M.</p>
+            <p class="font-body text-[10px] text-cinzaPet">Cliente de Joinville</p>
+          </div>
+          <span class="text-xs text-cinzaPet font-bold">Google Maps</span>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="bg-white dark:bg-darkSurface p-6 rounded-card border border-areiaEscura/30 dark:border-terracota/20 shadow-sm scroll-reveal flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-1 text-mostarda mb-3">
+            ★★★★★
+          </div>
+          <p class="font-body text-xs sm:text-sm italic text-marromPet dark:text-cremeQuente mb-4 leading-relaxed">
+            "Muito prático a tele-entrega da ração. Chega super rápido em casa e o atendimento pelo WhatsApp é Nota 1000!"
+          </p>
+        </div>
+        <div class="pt-4 border-t border-areia/50 dark:border-terracota/20 flex items-center justify-between">
+          <div>
+            <p class="font-body font-bold text-xs">Vanessa K.</p>
+            <p class="font-body text-[10px] text-cinzaPet">Cliente frequente</p>
+          </div>
+          <span class="text-xs text-cinzaPet font-bold">Google Maps</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+<!-- 6. HORÁRIOS & LOCALIZAÇÃO    -->
+<!-- ============================ -->
+<section id="localizacao" class="py-6 md:py-10 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-white dark:bg-darkCard rounded-2xl md:rounded-dobra p-5 sm:p-8 md:p-12 py-10 md:py-16 shadow-sm border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    
+    <div class="grid md:grid-cols-12 gap-8 items-start">
+      
+      <!-- Informações & Horários -->
+      <div class="md:col-span-5 scroll-reveal-left">
+        <span class="font-display text-xs sm:text-sm font-bold text-terracota bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20 uppercase tracking-wider">Localização fácil</span>
+        <h2 class="font-display text-3xl font-bold mt-3 mb-4">Horários e como chegar</h2>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura mb-6 leading-relaxed">
+          Venha nos fazer uma visita na R. Boehmerwald, 498. Espaço plano, acessível e com estacionamento facilitado.
+        </p>
+
+        <!-- Address Card -->
+        <div class="bg-cremeQuente dark:bg-darkSurface p-4 sm:p-5 rounded-card border border-areiaEscura/30 dark:border-terracota/20 mb-6">
+          <div class="flex items-start gap-3">
+            <span class="text-xl text-terracota mt-0.5">📍</span>
+            <div>
+              <p class="font-body font-bold text-xs uppercase text-cinzaPet">Endereço</p>
+              <p class="font-display font-bold text-base text-marromPet dark:text-cremeQuente mt-0.5">R. Boehmerwald, 498</p>
+              <p class="font-body text-xs text-cinzaPet dark:text-areiaEscura">Bairro Paranaguamirim — Joinville / SC</p>
+              <p class="font-body text-[11px] text-cinzaPet">CEP: 89232-486</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opening Hours List -->
+        <div class="bg-cremeQuente dark:bg-darkSurface p-4 sm:p-5 rounded-card border border-areiaEscura/30 dark:border-terracota/20 mb-6">
+          <p class="font-body font-bold text-xs uppercase text-cinzaPet mb-3">Horário de funcionamento</p>
+          <div class="space-y-2 text-xs">
+            <div class="flex items-center justify-between py-1 border-b border-areiaEscura/20 dark:border-terracota/10">
+              <span class="font-semibold">Segunda a Sexta</span>
+              <span class="font-bold text-terracota">08:00–12:00 e 14:00–19:00</span>
+            </div>
+            <div class="flex items-center justify-between py-1 border-b border-areiaEscura/20 dark:border-terracota/10">
+              <span class="font-semibold">Sábado</span>
+              <span class="font-bold text-terracota">08:00–13:00</span>
+            </div>
+            <div class="flex items-center justify-between py-1">
+              <span class="font-semibold">Domingo</span>
+              <span class="font-bold text-red-500">Fechado</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Links -->
+        <div class="flex flex-wrap gap-3">
+          <a href="https://www.google.com.br/maps/place/Animal+Pets/@-26.3605759,-48.8325678,19.25z/data=!4m6!3m5!1s0x94deb7b2dce5bcb9:0xfbd6b8622edfc7db" target="_blank" rel="noopener noreferrer" class="btn-cta bg-terracota text-white px-4 py-2.5 rounded-xl font-bold text-xs flex items-center gap-1.5">
+            <span>Abrir no Google Maps</span>
+            <span>↗</span>
+          </a>
+          <a href="tel:47984228382" class="btn-primary bg-areia/60 dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-4 py-2.5 rounded-xl font-bold text-xs flex items-center gap-1.5">
+            <span>📞 (47) 98422-8382</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Google Maps Embed Container -->
+      <div class="md:col-span-7 scroll-reveal-right">
+        <div class="rounded-card overflow-hidden border-2 border-areiaEscura/30 dark:border-terracota/30 shadow-lg h-[360px] sm:h-[460px] relative">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3575.474812328124!2d-48.8335867!3d-26.3607337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94deb7b2dce5bcb9%3A0xfbd6b8622edfc7db!2sAnimal%20Pets!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização da Animal Pets no Google Maps">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+<!-- 7. DÚVIDAS FREQUENTES (FAQ)  -->
+<!-- ============================ -->
+<section id="faq" class="py-6 md:py-10 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-2xl md:rounded-dobra p-5 sm:p-8 md:p-12 py-10 md:py-16 border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    
+    <div class="text-center max-w-xl mx-auto mb-10 scroll-reveal">
+      <span class="font-display text-xs sm:text-sm font-bold text-terracota bg-terracota/10 px-3 py-1 rounded-full border border-terracota/20 uppercase tracking-wider">Dúvidas frequentes</span>
+      <h2 class="font-display text-3xl font-bold mt-2">Perguntas comuns sobre a Animal Pets</h2>
+    </div>
+
+    <div class="max-w-3xl mx-auto space-y-4">
+      
+      <!-- FAQ Item 1 -->
+      <div class="bg-white dark:bg-darkSurface rounded-card border border-areiaEscura/30 dark:border-terracota/20 p-4 sm:p-5 scroll-reveal">
+        <button onclick="toggleAccordion('faq-1')" class="w-full flex items-center justify-between font-display font-bold text-sm sm:text-base text-left text-marromPet dark:text-cremeQuente">
+          <span>Como posso agendar o Banho e Tosa?</span>
+          <span id="faq-1-icon" class="text-terracota transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-1" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out overflow-hidden">
+          <div class="overflow-hidden pt-3 font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
+            Você pode agendar pelo botão de agendamento do site ou mandando uma mensagem direta no WhatsApp (47) 98422-8382.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 2 -->
+      <div class="bg-white dark:bg-darkSurface rounded-card border border-areiaEscura/30 dark:border-terracota/20 p-4 sm:p-5 scroll-reveal">
+        <button onclick="toggleAccordion('faq-2')" class="w-full flex items-center justify-between font-display font-bold text-sm sm:text-base text-left text-marromPet dark:text-cremeQuente">
+          <span>Vocês entregam ração em casa no Paranaguamirim?</span>
+          <span id="faq-2-icon" class="text-terracota transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-2" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out overflow-hidden">
+          <div class="overflow-hidden pt-3 font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
+            Sim! Fazemos entrega rápida de rações, antipulgas e petiscos no Paranaguamirim, Boehmerwald e região.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 3 -->
+      <div class="bg-white dark:bg-darkSurface rounded-card border border-areiaEscura/30 dark:border-terracota/20 p-4 sm:p-5 scroll-reveal">
+        <button onclick="toggleAccordion('faq-3')" class="w-full flex items-center justify-between font-display font-bold text-sm sm:text-base text-left text-marromPet dark:text-cremeQuente">
+          <span>Como funciona o transporte de Táxi Pet?</span>
+          <span id="faq-3-icon" class="text-terracota transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-3" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out overflow-hidden">
+          <div class="overflow-hidden pt-3 font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
+            Buscamos seu pet em casa, realizamos o banho e tosa na loja e o entregamos de volta limpinho e cheiroso na sua porta.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ Item 4 -->
+      <div class="bg-white dark:bg-darkSurface rounded-card border border-areiaEscura/30 dark:border-terracota/20 p-4 sm:p-5 scroll-reveal">
+        <button onclick="toggleAccordion('faq-4')" class="w-full flex items-center justify-between font-display font-bold text-sm sm:text-base text-left text-marromPet dark:text-cremeQuente">
+          <span>Quais as formas de pagamento aceitas?</span>
+          <span id="faq-4-icon" class="text-terracota transition-transform duration-300">▼</span>
+        </button>
+        <div id="faq-4" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out overflow-hidden">
+          <div class="overflow-hidden pt-3 font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura leading-relaxed">
+            Aceitamos Pix, cartões de crédito e débito e dinheiro.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================ -->
+<!-- RODAPÉ COMPLETO              -->
+<!-- ============================ -->
+<footer class="py-8 sm:py-12 px-3 sm:px-4 md:px-[2cm]">
+  <div class="w-full md:max-w-[calc(100%-4cm)] mx-auto bg-cremeQuente dark:bg-darkCard rounded-2xl md:rounded-dobra p-6 sm:p-12 paw-pattern border border-areiaEscura/30 dark:border-terracota/20 transition-colors duration-400">
+    <div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-8 mb-8 pb-8 border-b border-areiaEscura/30 dark:border-terracota/20">
+      
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-2.5 mb-3">
+          <div class="w-8 h-8 rounded-xl bg-terracota text-white font-bold flex items-center justify-center text-sm">🐾</div>
+          <span class="font-display text-xl font-bold">Animal Pets</span>
+        </div>
+        <p class="font-body text-xs sm:text-sm text-cinzaPet dark:text-areiaEscura max-w-sm mb-4">
+          Pet Shop e Banho e Tosa na R. Boehmerwald, 498 em Joinville-SC. Dedicação e carinho de verdade com o seu animal de estimação.
+        </p>
+        <p class="font-body text-xs text-cinzaPet font-semibold">📍 R. Boehmerwald, 498 - Joinville / SC</p>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-sm uppercase tracking-wider text-terracota mb-3">Navegação</h4>
+        <ul class="space-y-2 font-body text-xs font-semibold text-cinzaPet dark:text-areiaEscura">
+          <li><a href="#hero" class="hover:text-terracota transition-colors">Início</a></li>
+          <li><a href="#servicos" class="hover:text-terracota transition-colors">Serviços</a></li>
+          <li><a href="#produtos" class="hover:text-terracota transition-colors">Produtos</a></li>
+          <li><a href="#avaliacoes" class="hover:text-terracota transition-colors">Avaliações</a></li>
+          <li><a href="#localizacao" class="hover:text-terracota transition-colors">Horários &amp; Contato</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-display font-bold text-sm uppercase tracking-wider text-terracota mb-3">Contato rápido</h4>
+        <p class="font-body text-xs font-bold text-marromPet dark:text-cremeQuente mb-2">📞 (47) 98422-8382</p>
+        <a href="https://wa.me/5547984228382" target="_blank" rel="noopener noreferrer" class="inline-block bg-verdePet text-white px-4 py-2 rounded-xl text-xs font-bold hover:bg-verdeHover transition-colors mb-4">
+          Enviar mensagem WhatsApp
+        </a>
+        <div class="text-[11px] text-cinzaPet">
+          <p>Seg - Sex: 08h às 12h | 14h às 19h</p>
+          <p>Sáb: 08h às 13h</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+      <p class="font-body text-xs text-cinzaPet">
+        &copy; 2026 Animal Pets. Todos os direitos reservados.
+      </p>
+
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="btn-primary bg-terracota text-white px-5 py-2 rounded-full font-body text-xs uppercase tracking-wider font-bold">
+        ↑ Voltar ao topo
+      </button>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================ -->
+<!-- MODAL DE AGENDAMENTO (NATIVO)-->
+<!-- ============================ -->
+<dialog id="bookingModal" class="rounded-card p-0 shadow-2xl max-w-lg w-[92vw] sm:w-full bg-cremeQuente dark:bg-darkCard border border-areiaEscura/40 dark:border-terracota/30 text-marromPet dark:text-cremeQuente">
+  <div class="p-5 sm:p-8">
+    
+    <div class="flex items-center justify-between mb-5">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-laranjaVibrante/20 flex items-center justify-center text-xl flex-shrink-0">🐾</div>
+        <div>
+          <h3 class="font-display text-lg sm:text-xl font-bold">Agendamento Animal Pets</h3>
+          <p class="font-body text-[11px] sm:text-xs text-cinzaPet">Preencha os dados do seu pet</p>
+        </div>
+      </div>
+      <button onclick="closeBookingModal()" class="w-8 h-8 rounded-full bg-areiaEscura/20 dark:bg-darkSurface flex items-center justify-center font-bold text-sm hover:bg-terracota hover:text-white transition-colors flex-shrink-0">✕</button>
+    </div>
+
+    <form id="bookingForm" onsubmit="handleBookingSubmit(event)" class="space-y-4">
+      <div>
+        <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Seu nome (Tutor)</label>
+        <input type="text" id="tutorName" required placeholder="Ex: Maria Clara" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3.5 py-2.5 rounded-xl font-body text-xs sm:text-sm focus:outline-none focus:border-terracota">
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Nome do Pet</label>
+          <input type="text" id="petName" required placeholder="Ex: Mel" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-2.5 rounded-xl font-body text-xs sm:text-sm focus:outline-none focus:border-terracota">
+        </div>
+        <div>
+          <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Porte do Pet</label>
+          <select id="petSize" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-2.5 rounded-xl font-body text-xs sm:text-sm focus:outline-none focus:border-terracota">
+            <option value="Pequeno">Pequeno (até 10kg)</option>
+            <option value="Médio">Médio (10kg a 20kg)</option>
+            <option value="Grande">Grande (acima de 20kg)</option>
+            <option value="Gato">Gato</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Serviço desejado</label>
+        <select id="serviceType" class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3.5 py-2.5 rounded-xl font-body text-xs sm:text-sm focus:outline-none focus:border-terracota">
+          <option value="Banho e Tosa Completo">Banho e Tosa Completo</option>
+          <option value="Apenas Banho e Hidratação">Apenas Banho e Hidratação</option>
+          <option value="Tosa Higiênica e Unhas">Tosa Higiênica e Corte de Unhas</option>
+          <option value="Táxi Pet + Banho">Táxi Pet (Busca em casa) + Banho</option>
+        </select>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <div>
+          <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Data preferida</label>
+          <input type="date" id="bookingDate" required class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-2.5 rounded-xl font-body text-xs sm:text-sm focus:outline-none focus:border-terracota">
+        </div>
+        <div>
+          <label class="block font-body text-xs font-bold uppercase text-cinzaPet mb-1">Horário preferido</label>
+          <input type="time" id="bookingTime" required class="w-full bg-white dark:bg-darkSurface border border-areiaEscura/40 dark:border-terracota/30 px-3 py-2.5 rounded-xl font-body text-xs sm:text-sm focus:outline-none focus:border-terracota">
+        </div>
+      </div>
+
+      <button type="submit" class="w-full btn-cta bg-laranjaVibrante text-white py-3.5 rounded-xl font-bold uppercase text-xs sm:text-sm tracking-wider shadow-md">
+        Confirmar agendamento via WhatsApp 🐾
+      </button>
+    </form>
+
+  </div>
+</dialog>
+
+<!-- ============================ -->
+<!-- CONTAINER DE TOAST           -->
+<!-- ============================ -->
+<div id="toast" class="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-50 bg-marromPet dark:bg-darkSurface text-white px-4 sm:px-6 py-3 sm:py-4 rounded-card shadow-2xl border border-terracota/40 flex items-center gap-3 max-w-[90vw] sm:max-w-md">
+  <span class="text-xl">✨</span>
+  <span id="toastMessage" class="font-body text-xs sm:text-sm font-bold">Mensagem do sistema</span>
+</div>
+
+<!-- ============================ -->
+<!-- SCRIPT DE INTERAÇÕES JS      -->
+<!-- ============================ -->
+<script>
+  // 1. Intersection Observer para animação Scroll Reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right').forEach(el => observer.observe(el));
+
+  // 2. Alternador de Tema Escuro / Claro com Persistência
+  function initTheme() {
+    const savedTheme = localStorage.getItem('animalpets_theme');
+    if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+      updateThemeUI(true);
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('animalpets_theme', isDark ? 'dark' : 'light');
+    updateThemeUI(isDark);
+    showToast(isDark ? '🌙 Modo escuro ativado!' : '☀️ Modo claro ativado!');
+  }
+
+  function updateThemeUI(isDark) {
+    const icon = document.getElementById('themeIcon');
+    const label = document.getElementById('themeLabel');
+    if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+    if (label) label.textContent = isDark ? 'Modo claro' : 'Modo escuro';
+  }
+  initTheme();
+
+  // 3. Gerenciador de Notificação Toast
+  let toastTimer;
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    const msgEl = document.getElementById('toastMessage');
+    if (toast && msgEl) {
+      msgEl.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3500);
+    }
+  }
+
+  // 4. Controller do Modal Nativo <dialog>
+  const bookingModal = document.getElementById('bookingModal');
+  function openBookingModal() {
+    if (bookingModal) bookingModal.showModal();
+  }
+  function closeBookingModal() {
+    if (bookingModal) bookingModal.close();
+  }
+
+  if (bookingModal) {
+    bookingModal.addEventListener('click', (e) => {
+      const rect = bookingModal.getBoundingClientRect();
+      if (
+        e.clientX < rect.left ||
+        e.clientX > rect.right ||
+        e.clientY < rect.top ||
+        e.clientY > rect.bottom
+      ) {
+        bookingModal.close();
+      }
+    });
+  }
+
+  // Submit do formulário de agendamento
+  function handleBookingSubmit(event) {
+    event.preventDefault();
+    const tutor = document.getElementById('tutorName').value;
+    const pet = document.getElementById('petName').value;
+    const size = document.getElementById('petSize').value;
+    const service = document.getElementById('serviceType').value;
+    const date = document.getElementById('bookingDate').value;
+    const time = document.getElementById('bookingTime').value;
+
+    closeBookingModal();
+    showToast('🎉 Agendamento enviado! Abrindo WhatsApp...');
+
+    const message = `Ol%C3%A1!%20Gostaria%20de%20agendar%20um%20servi%C3%A7o%20na%20Animal%20Pets:%0A%0A- %20Tutor:%20${encodeURIComponent(tutor)}%0A- %20Pet:%20${encodeURIComponent(pet)}%20(${encodeURIComponent(size)})%0A- %20Servi%C3%A7o:%20${encodeURIComponent(service)}%0A- %20Data:%20${encodeURIComponent(date)}%0A- %20Hor%C3%A1rio:%20${encodeURIComponent(time)}`;
+
+    setTimeout(() => {
+      window.open(`https://wa.me/5547984228382?text=${message}`, '_blank');
+    }, 600);
+  }
+
+  // 5. Sanfona de Perguntas Frequentes
+  function toggleAccordion(id) {
+    const content = document.getElementById(id);
+    const icon = document.getElementById(id + '-icon');
+    if (content) {
+      const isExpanded = content.classList.contains('grid-rows-[1fr]');
+      if (isExpanded) {
+        content.classList.remove('grid-rows-[1fr]');
+        content.classList.add('grid-rows-[0fr]');
+        if (icon) icon.style.transform = 'rotate(0deg)';
+      } else {
+        content.classList.remove('grid-rows-[0fr]');
+        content.classList.add('grid-rows-[1fr]');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      }
+    }
+  }
+
+  // 6. Filtro da Vitrine de Produtos
+  function filterCatalog(category, buttonEl) {
+    document.querySelectorAll('.tab-pill').forEach(btn => {
+      btn.classList.remove('active');
+      btn.classList.add('bg-white/70', 'dark:bg-darkSurface');
+    });
+    buttonEl.classList.add('active');
+    buttonEl.classList.remove('bg-white/70', 'dark:bg-darkSurface');
+
+    const items = document.querySelectorAll('.catalog-item');
+    items.forEach(item => {
+      if (category === 'todos' || item.classList.contains(category)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
